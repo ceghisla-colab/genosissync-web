@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genosis Sync — Infrastructure MEV & Arbitrage ultra-rapide sur Base</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Header / Navbar -->
+    <header class="max-w-6xl mx-auto w-full px-6 py-8 flex justify-between items-center border-b border-slate-900">
+        <div class="flex items-center space-x-3">
+            <span class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent tracking-wider">GENESIS SYNC</span>
+        </div>
+        <span class="px-3 py-1 text-xs font-semibold text-cyan-400 bg-cyan-950/40 border border-cyan-800/60 rounded-full tracking-wide uppercase">Base Mainnet Live</span>
+    </header>
+
+    <!-- Main Content / Hero -->
+    <main class="max-w-5xl mx-auto px-6 py-16 flex-grow flex flex-col justify-center text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-slate-200 to-slate-500 bg-clip-text text-transparent">
+            Infrastructure Arbitrage & MEV <br class="hidden md:block"> à Faible Latence sur Base L2
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Genosis Sync conçoit et opère une architecture de calcul d'élite en Rust pour simuler, valider et exécuter des flux DeFi en temps réel avec des performances de traitement à la microseconde.
+        </p>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-4xl mx-auto">
+            <!-- Card 1 -->
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
+                <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center text-cyan-400 font-bold mb-4">01</div>
+                <h3 class="text-lg font-bold text-white mb-2">Exécution Rust (Reth)</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Client Reth personnalisé optimisé pour compiler et exécuter l'état global du réseau Base en temps réel, évitant tout goulot d'étranglement de calcul.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
+                <div class="w-10 h-10 rounded-lg bg-indigo-950/60 border border-indigo-800/40 flex items-center justify-center text-indigo-400 font-bold mb-4">02</div>
+                <h3 class="text-lg font-bold text-white mb-2">Consensus Temps Réel</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Synchronisation continue avec le séquenceur de Base permettant de suivre et de valider cryptographiquement chaque transaction dès sa création.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
+                <div class="w-10 h-10 rounded-lg bg-purple-950/60 border border-purple-800/40 flex items-center justify-center text-purple-400 font-bold mb-4">03</div>
+                <h3 class="text-lg font-bold text-white mb-2">Simulation DeFi Locale</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Indexation complète de la structure MDBX locale permettant d'exécuter des simulations de trading sans aucun appel réseau extérieur.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto w-full px-6 py-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 space-y-4 md:space-y-0">
+        <p>&copy; 2026 Genosis Sync. Tous droits réservés.</p>
+        <p class="flex items-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Nœuds d'exécution synchronisés</span>
+        </p>
+    </footer>
+
+</body>
+</html>
