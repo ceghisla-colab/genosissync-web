@@ -1,97 +1,115 @@
+<!-- Partie 1 / 4 - index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genosis Sync — Infrastructure MEV & Arbitrage ultra-rapide sur Base</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genosis Sync — Infrastructure MEV & Arbitrage ultra-rapide sur Base</title>
+<style>
+body { background: #020617; color: #cbd5e1; font-family: sans-serif; padding: 30px; margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+header { display: flex; flex-direction: column; gap: 15px; border-bottom: 1px solid #1e293b; padding-bottom: 20px; }
+@media (min-width: 768px) { header { flex-direction: row; justify-content: space-between; align-items: center; } }
+.logo-container { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 24px; font-weight: 900; color: #22d3ee; letter-spacing: 1px; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(15, 23, 42, 0.6); padding: 6px; border-radius: 30px; border: 1px solid rgba(30, 41, 59, 0.8); }
+nav a { padding: 6px 12px; color: #94a3b8; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 15px; transition: 0.3s; }
+nav a.active { color: #fff; background: #1e293b; }
+nav a:hover:not(.active) { color: #fff; }
+main { max-width: 900px; margin: 40px auto; text-align: center; flex-grow: 1; }
+h1 { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 20px; }
+.desc { margin-bottom: 40px; font-size: 16px; line-height: 1.8; color: #94a3b8; }
+.section { text-align: left; background: #0f172a; padding: 30px; border-radius: 16px; border: 1px solid #1e293b; margin-bottom: 40px; }
+.section h3 { color: #22d3ee; text-transform: uppercase; font-size: 12px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: 1px; }
+.section h4 { font-size: 22px; color: #fff; margin: 0 0 20px 0; }
+.section p { font-size: 14px; line-height: 1.8; margin: 0 0 15px 0; color: #94a3b8; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 24px; text-align: left; }
+@media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+.card { padding: 24px; background: #0b0f19; border: 1px solid #1e293b; border-radius: 12px; font-size: 13px; line-height: 1.8; }
+.card h5 { color: #fff; font-size: 15px; margin: 0 0 10px 0; }
+.phase { color: #6366f1; font-weight: 700; display: block; margin-bottom: 8px; font-size: 11px; text-transform: uppercase; }
+footer { border-top: 1px solid #1e293b; padding-top: 25px; font-size: 12px; color: #64748b; display: flex; justify-content: space-between; }
+</style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-slate-950">
+<body>
+<header>
+<div class="logo-container">
+<svg style="width:32px; height:32px; color:#22d3ee;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(34, 211, 238, 0.1)"/>
+</svg>
+<span class="logo">GENOSIS SYNC</span>
+</div>
+<nav>
+<a href="index.html" class="active">Accueil</a>
+<a href="technologie.html">Infrastructure</a>
+<a href="strategies.html">Stratégies</a>
+<a href="securite.html">Sécurité</a>
+<a href="mempool.html">Mempool</a>
+<a href="ecosysteme.html">Écosystème</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
 
-    <!-- Header / Navbar -->
-    <header class="max-w-6xl mx-auto w-full px-6 py-8 flex flex-col sm:flex-row justify-between items-center border-b border-slate-900 gap-4">
-        <div class="flex items-center space-x-3">
-            <svg class="w-8 h-8 text-cyan-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(34, 211, 238, 0.1)"/>
-            </svg>
-            <span class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent tracking-wider">GENOSIS SYNC</span>
-        </div>
-        
-        <nav class="flex items-center space-x-1 md:space-x-4 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80">
-            <a href="index.html" class="px-4 py-1.5 text-xs font-bold text-white bg-slate-800/80 rounded-full transition">Accueil</a>
-            <a href="technologie.html" class="px-4 py-1.5 text-xs font-semibold text-slate-400 hover:text-white transition">Infrastructure</a>
-            <a href="strategies.html" class="px-4 py-1.5 text-xs font-semibold text-slate-400 hover:text-white transition">Stratégies</a>
-        </nav>
-    </header>
+<!-- Partie 2 / 4 - index.html -->
+<main>
+<h1>L'Infrastructure MEV & Arbitrage de Nouvelle Génération</h1>
+<p class="desc">
+Bienvenue sur la plateforme technologique officielle de Genosis Sync. Notre mission est d’apporter une réponse d’élite aux inefficacités structurelles de prix au sein de l’écosystème de la finance décentralisée (DeFi) sur la blockchain Base. Grâce à une architecture logicielle hautement optimisée et entièrement codée en Rust, notre système indexe, analyse et simule les transactions du mempool en temps réel. Notre technologie de pointe élimine la latence pour capturer les meilleures opportunités d'arbitrage de manière atomique et sécurisée, tout en assurant une résilience totale face aux réorganisations de blocs et aux glissements de prix.
+<br><br>
+Dans un environnement de marché où chaque milliseconde détermine le succès ou l'échec d'une transaction d'arbitrage, Genosis Sync se positionne comme un pionnier de la vitesse et de l'efficacité. Nous développons des moteurs de calcul propriétaires capables de simuler l'état de la machine virtuelle Ethereum (EVM) localement, sans aucun appel externe. Cela nous permet d'obtenir un avantage concurrentiel absolu, en détectant les écarts de prix entre les différents pools de liquidité avant les autres acteurs du marché. Notre infrastructure est conçue dès le départ pour une évolutivité maximale et pour supporter un débit transactionnel massif.
+<br><br>
+Notre approche ne se limite pas à la recherche de profits algorithmiques ; elle contribue activement à la stabilisation, à l'équilibrage et à l'efficacité globale des marchés financiers décentralisés sur la solution de couche 2 Base. En comblant instantanément les écarts de liquidité, Genosis Sync joue un rôle fondamental dans la réduction du slippage pour les utilisateurs finaux de la DeFi, faisant de notre protocole un partenaire d'infrastructure de confiance et à haute valeur ajoutée pour l'ensemble de l'écosystème blockchain.
+</p>
 
-    <!-- Hero Section -->
-    <main class="max-w-5xl mx-auto px-6 py-12 flex-grow flex flex-col justify-center text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-slate-200 to-slate-500 bg-clip-text text-transparent">
-            L'Infrastructure MEV & Arbitrage <br class="hidden md:block"> de Nouvelle Génération sur Base L2
-        </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Genosis Sync conçoit une architecture de calcul d'élite en Rust pour simuler, valider et exécuter des flux DeFi en temps réel. Nous développons la technologie de routage de transaction la plus rapide du réseau Base.
+<!-- Partie 3 / 4 - index.html -->
+<div class="section">
+<h3>Le Fondateur &amp; Vision</h3>
+<h4>Ceghisla Ouang — Architecte Système Web3</h4>
+<p>
+Porté par une passion absolue pour l'optimisation extrême des systèmes et la cryptographie appliquée, Ceghisla Ouang a fondé Genosis Sync pour repousser les limites de la latence d'exécution et de simulation au sein des réseaux décentralisés de couche 2. Fort d'une expertise reconnue dans le domaine de l'ingénierie logicielle bas niveau et de la sécurité des infrastructures, il supervise l'ensemble des développements techniques de la plateforme. Son parcours l'a amené à concevoir des architectures capables de traiter des flux de données à l'échelle de la microseconde, un atout indispensable pour concevoir les moteurs de trading algorithmique les plus compétitifs du réseau Base.
+</p>
+<p>
+Sous la direction de Ceghisla, Genosis Sync ne se contente pas de déployer des clients standards, mais développe des versions hautement modifiées et sur-mesure du client d’exécution Reth, entièrement codé en Rust. Sa vision stratégique est de créer un écosystème d'exécution décentralisé robuste, capable d'analyser le mempool, d'extraire les métadonnées et d'exécuter des simulations de transactions EVM locales sans aucune friction. Cette optimisation s'étend également au niveau de l'infrastructure réseau, en utilisant des configurations avancées comme les cartes réseau virtuelles GVNIC et le tuning du kernel Linux pour garantir une connectivité ultra-directe avec le séquenceur de Base.
+</p>
+<p>
+À long terme, la vision portée par Ceghisla est d'élever Genosis Sync au rang de protocole d'infrastructure institutionnel de confiance. En construisant une technologie d'exécution sécurisée et transparente, la startup est pensée dès le départ pour une évolutivité maximale (SaaS/Venture-Scalable). Cette trajectoire permettra de structurer de futures levées de fonds d'amorçage auprès de capitaux-risques spécialisés et d'obtenir des subventions d'écosystèmes auprès de fondations Web3 majeures à l'horizon 2029, consolidant ainsi la place de Genosis Sync parmi les leaders technologiques de la blockchain.
+</p>
+</div>
+
+<!-- Partie 4 / 4 - index.html -->
+<h3 class="text-xs font-bold" style="color: #6366f1; text-transform: uppercase; font-size: 12px; font-weight: 700; text-align: center; margin-bottom: 25px; letter-spacing: 1px;">Notre Feuille de Route</h3>
+<div class="grid">
+    <!-- Phase 1 -->
+    <div class="card">
+        <span class="phase" style="color: #22d3ee;">2026 - 2027 — Phase 1</span>
+        <h5>Infrastructures, Latence &amp; Déploiement</h5>
+        <p>
+            Notre objectif prioritaire est d’établir la base technique la plus stable et la plus rapide possible. Nous déployons un nœud d’exécution minimal Reth optimisé en local sur le réseau Base Mainnet. Cette étape implique une configuration réseau premium à très faible goulot d'étranglement (via Google Virtual NIC et le réseau Premium de GCP) ainsi qu'une personnalisation des index MDBX de notre base de données. En nous synchronisant en temps réel avec le séquenceur de Base, nous éliminerons toute latence réseau pour analyser, simuler et exécuter nos transactions en local de manière instantanée, garantissant un environnement d'arbitrage sécurisé et ultra-rapide.
         </p>
-
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
-            <a href="technologie.html" class="px-6 py-3 rounded-full text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-indigo-400 hover:from-cyan-300 hover:to-indigo-300 transition duration-300">
-                Explorer l'Infrastructure
-            </a>
-            <a href="strategies.html" class="px-6 py-3 rounded-full text-sm font-bold text-slate-300 bg-slate-900 border border-slate-800 hover:bg-slate-800 transition duration-300">
-                Découvrir nos Stratégies
-            </a>
-        </div>
-
-        <!-- Section Fondateur (Nouveau !) -->
-        <section class="max-w-3xl mx-auto my-12 p-8 rounded-2xl bg-slate-900/20 border border-slate-900 text-left">
-            <div class="flex flex-col md:flex-row items-center gap-6">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center font-black text-2xl text-slate-950">
-                    C
-                </div>
-                <div>
-                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Le Fondateur</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Ceghisla Ouang — Lead Web3 Systems Engineer</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Spécialiste de l'optimisation réseau et passionné d'architecture blockchain, Ceghisla a fondé Genosis Sync pour concevoir des systèmes de validation à latence microseconde. Il supervise le développement des clients Reth personnalisés et l'intégration des flux d'exécution.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Roadmap (Corrigée avec une vision à long terme !) -->
-        <section class="my-16 max-w-4xl mx-auto text-left">
-            <h2 class="text-2xl font-bold text-white mb-8 text-center bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Notre Feuille de Route</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Phase 1 -->
-                <div class="p-6 rounded-2xl border border-slate-900 bg-slate-950">
-                    <span class="text-cyan-400 text-xs font-bold block mb-1">2026 - 2027 — Phase 1</span>
-                    <h4 class="text-md font-bold text-white mb-2">Infrastructures & Latence</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">Mise en ligne de notre nœud d'exécution minimal Reth sur Base Mainnet. Optimisation des performances réseau locales et réduction de la latence de simulation.</p>
-                </div>
-                <!-- Phase 2 -->
-                <div class="p-6 rounded-2xl border border-slate-900 bg-slate-950">
-                    <span class="text-indigo-400 text-xs font-bold block mb-1">2028 — Phase 2</span>
-                    <h4 class="text-md font-bold text-white mb-2">Expansion Multi-L2 & IA</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">Déploiement de notre infrastructure sur Arbitrum et Optimism L2. Intégration de modèles prédictifs IA pour anticiper les congestions de mempool.</p>
-                </div>
-                <!-- Phase 3 -->
-                <div class="p-6 rounded-2xl border border-slate-950 bg-slate-900/20">
-                    <span class="text-purple-400 text-xs font-bold block mb-1">2029 — Phase 3</span>
-                    <h4 class="text-md font-bold text-white mb-2">Financement & Recrutement</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">Ouverture d'une première levée de fonds d'amorçage (Seed/Venture Capital) et demande de subventions d'écosystèmes Web3 pour agrandir l'équipe.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="max-w-6xl mx-auto w-full px-6 py-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-        <p>&copy; 2026 Genosis Sync. Tous droits réservés.</p>
-        <p class="flex items-center space-x-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Nœuds d'exécution synchronisés</span>
+    </div>
+    <!-- Phase 2 -->
+    <div class="card">
+        <span class="phase" style="color: #6366f1;">2028 — Phase 2</span>
+        <h5>Multi-L2 &amp; Modélisation Prédictive IA</h5>
+        <p>
+            Une fois notre infrastructure sur Base L2 stabilisée et hautement performante, nous entamerons notre expansion vers d'autres solutions de couche 2 majeures, notamment Arbitrum et Optimism L2, afin de diversifier nos flux de capture de valeur. En parallèle, nous intégrerons des modèles d'intelligence artificielle prédictive. Ces algorithmes IA analyseront l'historique et les flux de transactions du mempool en temps réel pour anticiper les congestions de réseau, optimiser dynamiquement nos frais de gas (frais d'exécution) et maximiser le taux de réussite de nos transactions d'arbitrage dans les blocs hautement disputés.
         </p>
-    </footer>
-
+    </div>
+    <!-- Phase 3 -->
+    <div class="card">
+        <span class="phase" style="color: #a855f7;">2029 — Phase 3</span>
+        <h5>Financement Institutionnel &amp; Expansion</h5>
+        <p>
+            Pour soutenir notre croissance globale et passer à une dimension d'envergure, nous ouvrirons notre premier tour de table de financement de capital-risque (Venture Capital / Seed Round). Nous solliciterons également des subventions d’écosystèmes (ecosystem grants) auprès de fondations blockchain renommées (comme la Fondation Base ou l'Optimism Collective). Ces ressources financières nous permettront de recruter des ingénieurs système d'élite spécialisés en Rust et en Go pour transformer notre moteur d'arbitrage propriétaire en un protocole de routage de transactions institutionnel et scalable à l'échelle mondiale.
+        </p>
+    </div>
+</div>
+</main>
+<footer>
+    <p>&copy; 2026 Genosis Sync. Tous droits réservés.</p>
+    <p style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+        <span>Nœuds d'exécution synchronisés</span>
+    </p>
+</footer>
 </body>
 </html>
