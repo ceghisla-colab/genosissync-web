@@ -1,0 +1,132 @@
+<!-- Partie 1 / 3 - mempool.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mempool — Genosis Sync</title>
+<style>
+body { background: #020617; color: #cbd5e1; font-family: sans-serif; padding: 30px; margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+header { display: flex; flex-direction: column; gap: 15px; border-bottom: 1px solid #1e293b; padding-bottom: 20px; }
+@media (min-width: 768px) { header { flex-direction: row; justify-content: space-between; align-items: center; } }
+.logo-container { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 24px; font-weight: 900; color: #22d3ee; letter-spacing: 1px; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(15, 23, 42, 0.6); padding: 6px; border-radius: 30px; border: 1px solid rgba(30, 41, 59, 0.8); }
+nav a { padding: 6px 12px; color: #94a3b8; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 15px; transition: 0.3s; }
+nav a.active { color: #fff; background: #1e293b; }
+nav a:hover:not(.active) { color: #fff; }
+main { max-width: 900px; margin: 40px auto; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; flex-grow: 1; }
+@media (min-width: 992px) { main { grid-template-columns: 1.2fr 1fr; } }
+.details { text-align: left; }
+.badge { display: inline-block; padding: 4px 12px; font-size: 11px; font-weight: 700; color: #06b6d4; bg: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.4); border-radius: 15px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+h1 { font-size: 38px; font-weight: 900; color: #fff; margin: 0 0 20px 0; line-height: 1.2; }
+.desc { font-size: 15px; line-height: 1.8; color: #94a3b8; margin-bottom: 25px; }
+.tech-list { list-style: none; padding: 0; margin: 0 0 30px 0; }
+.tech-list li { font-size: 13px; line-height: 1.8; margin-bottom: 20px; color: #cbd5e1; display: flex; align-items: flex-start; gap: 10px; }
+.tech-list li strong { color: #fff; display: block; margin-bottom: 4px; }
+.tech-list li::before { content: "•"; color: #06b6d4; font-weight: bold; font-size: 16px; line-height: 1; }
+.diagram-container { display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(15, 23, 42, 0.3); border: 1px solid #1e293b; border-radius: 24px; position: relative; overflow: hidden; }
+@keyframes radar-sweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.animate-sweep { transform-origin: 100px 100px; animation: radar-sweep 4s linear infinite; }
+@keyframes signal-pulse { 0% { r: 0; opacity: 1; } 100% { r: 90; opacity: 0; } }
+.animate-pulse-signal { animation: signal-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+footer { border-top: 1px solid #1e293b; padding-top: 25px; font-size: 12px; color: #64748b; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<header>
+<div class="logo-container">
+<svg style="width:32px; height:32px; color:#22d3ee;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(34, 211, 238, 0.1)"/>
+</svg>
+<span class="logo">GENOSIS SYNC</span>
+</div>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="technologie.html">Infrastructure</a>
+<a href="strategies.html">Stratégies</a>
+<a href="securite.html">Sécurité</a>
+<a href="mempool.html" class="active">Mempool</a>
+<a href="ecosysteme.html">Écosystème</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<!-- Partie 2 / 3 - mempool.html -->
+<main>
+<div class="details">
+<span class="badge">Analyse Temps Réel</span>
+<h1>Indexation Mempool &amp; Analyse Prédictive</h1>
+<p class="desc">
+Le mempool (la file d'attente des transactions non validées) est le cœur battant de la DeFi. Pour y capter de la valeur de manière efficace, Genosis Sync a développé un moteur de balayage et d'indexation ultra-rapide. En analysant chaque transaction dès sa diffusion sur le réseau de couche 2 Base, notre système reconstruit l'état prévisionnel de la blockchain avant même que les blocs ne soient définitivement validés et scellés par le séquenceur.
+</p>
+
+<ul class="tech-list">
+<li>
+<div>
+<strong>Indexation Mempool à la Microseconde :</strong>
+Notre moteur d'indexation interroge et décode en continu les paquets de transactions en attente. En éliminant tout goulot d'étranglement de traitement, le système catégorise les transactions par type de protocole (Uniswap, Aerodrome, etc.) et extrait instantanément les paramètres clés de liquidité.
+</div>
+</li>
+<li>
+<div>
+<strong>Calcul de Tarification de Gaz Dynamique :</strong>
+Pour s'assurer que nos transactions d'arbitrage soient incluses en priorité absolue par le séquenceur, nos algorithmes calculent dynamiquement les frais de priorité (Priority Fees). Le système évalue le coût exact requis pour dépasser la concurrence de manière chirurgicale, sans gaspiller de capital.
+</div>
+</li>
+<li>
+<div>
+<strong>Modèles Prédictifs d'IA &amp; Congestion :</strong>
+Nous intégrons des modèles d'apprentissage automatique légers entraînés pour prédire la congestion du réseau à court terme. En anticipant les pics de trafic et les variations brusques de frais de gaz de Base, notre IA adapte en temps réel le rythme d'envoi de nos paquets de transactions pour maximiser notre taux de réussite.
+</div>
+</li>
+</ul>
+</div>
+
+<!-- Partie 3 / 3 - mempool.html -->
+<div class="diagram-container">
+<svg style="width: 100%; max-width: 380px;" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Radar Outer Circle (Cercle extérieur fixe) -->
+<circle cx="100" cy="100" r="90" stroke="#0e172c" stroke-width="2"/>
+<circle cx="100" cy="100" r="60" stroke="#0e172c" stroke-width="1" stroke-dasharray="4, 4"/>
+<circle cx="100" cy="100" r="30" stroke="#0e172c" stroke-width="1" stroke-dasharray="2, 2"/>
+
+<!-- Pulsing Radar Signal Wave (Onde de signal clignotante) -->
+<circle cx="100" cy="100" r="10" stroke="#06b6d4" stroke-width="1.5" class="animate-pulse-signal" style="transform-origin: center;"/>
+
+<!-- Center Point (Le nœud de détection) -->
+<circle cx="100" cy="100" r="4" fill="#06b6d4" style="filter: drop-shadow(0px 0px 3px #06b6d4);"/>
+
+<!-- Crosshair Grid Lines (Lignes de visée) -->
+<line x1="10" y1="100" x2="190" y2="100" stroke="#0e172c" stroke-width="1"/>
+<line x1="100" y1="10" x2="100" y2="190" stroke="#0e172c" stroke-width="1"/>
+
+<!-- Detected Transactions (Petits points de transactions détectés) -->
+<circle cx="60" cy="70" r="3" fill="#22d3ee" style="filter: drop-shadow(0px 0px 3px #22d3ee);"/>
+<circle cx="140" cy="120" r="2.5" fill="#a855f7" style="filter: drop-shadow(0px 0px 2px #a855f7);"/>
+<circle cx="110" cy="150" r="3.5" fill="#6366f1" style="filter: drop-shadow(0px 0px 4px #6366f1);"/>
+
+<!-- Rotating Radar Beam (Le faisceau de balayage rotatif) -->
+<g class="animate-sweep">
+<line x1="100" y1="100" x2="100" y2="10" stroke="url(#radar-gradient)" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<!-- Dégradé de couleur du faisceau -->
+<defs>
+<linearGradient id="radar-gradient" x1="100" y1="100" x2="100" y2="10" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+<stop offset="100%" stop-color="#06b6d4" stop-opacity="1"/>
+</linearGradient>
+</defs>
+</svg>
+</div>
+</main>
+<footer>
+<p>&copy; 2026 Genosis Sync. Tous droits réservés.</p>
+<p style="display: flex; align-items: center; gap: 8px;">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+<span>Nœuds d'exécution synchronisés</span>
+</p>
+</footer>
+</body>
+</html>
