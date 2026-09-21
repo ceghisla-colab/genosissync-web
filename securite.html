@@ -1,0 +1,118 @@
+<!-- Partie 1 / 3 - securite.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sécurité — Genosis Sync</title>
+<style>
+body { background: #020617; color: #cbd5e1; font-family: sans-serif; padding: 30px; margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+header { display: flex; flex-direction: column; gap: 15px; border-bottom: 1px solid #1e293b; padding-bottom: 20px; }
+@media (min-width: 768px) { header { flex-direction: row; justify-content: space-between; align-items: center; } }
+.logo-container { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 24px; font-weight: 900; color: #22d3ee; letter-spacing: 1px; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; background: rgba(15, 23, 42, 0.6); padding: 6px; border-radius: 30px; border: 1px solid rgba(30, 41, 59, 0.8); }
+nav a { padding: 6px 12px; color: #94a3b8; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 15px; transition: 0.3s; }
+nav a.active { color: #fff; background: #1e293b; }
+nav a:hover:not(.active) { color: #fff; }
+main { max-width: 900px; margin: 40px auto; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; flex-grow: 1; }
+@media (min-width: 992px) { main { grid-template-columns: 1.2fr 1fr; } }
+.details { text-align: left; }
+.badge { display: inline-block; padding: 4px 12px; font-size: 11px; font-weight: 700; color: #f43f5e; bg: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.4); border-radius: 15px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+h1 { font-size: 38px; font-weight: 900; color: #fff; margin: 0 0 20px 0; line-height: 1.2; }
+.desc { font-size: 15px; line-height: 1.8; color: #94a3b8; margin-bottom: 25px; }
+.tech-list { list-style: none; padding: 0; margin: 0 0 30px 0; }
+.tech-list li { font-size: 13px; line-height: 1.8; margin-bottom: 20px; color: #cbd5e1; display: flex; align-items: flex-start; gap: 10px; }
+.tech-list li strong { color: #fff; display: block; margin-bottom: 4px; }
+.tech-list li::before { content: "•"; color: #f43f5e; font-weight: bold; font-size: 16px; line-height: 1; }
+.diagram-container { display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(15, 23, 42, 0.3); border: 1px solid #1e293b; border-radius: 24px; position: relative; overflow: hidden; }
+@keyframes shield-glow { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.05); opacity: 0.6; } }
+@keyframes scan { 0% { transform: translateY(-40px); opacity: 0; } 50% { opacity: 0.8; } 100% { transform: translateY(40px); opacity: 0; } }
+.animate-scan { animation: scan 3s ease-in-out infinite; }
+footer { border-top: 1px solid #1e293b; padding-top: 25px; font-size: 12px; color: #64748b; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<header>
+<div class="logo-container">
+<svg style="width:32px; height:32px; color:#22d3ee;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(34, 211, 238, 0.1)"/>
+</svg>
+<span class="logo">GENOSIS SYNC</span>
+</div>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="technologie.html">Infrastructure</a>
+<a href="strategies.html">Stratégies</a>
+<a href="securite.html" class="active">Sécurité</a>
+<a href="mempool.html">Mempool</a>
+<a href="ecosysteme.html">Écosystème</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<!-- Partie 2 / 3 - securite.html -->
+<main>
+<div class="details">
+<span class="badge">Sécurisation Avancée</span>
+<h1>Sécurité &amp; Isolation Cryptographique</h1>
+<p class="desc">
+L'exécution d'opérations de haute capacité sur la finance décentralisée (DeFi) exige une rigueur et une tolérance aux pannes absolues. Genosis Sync a développé un cadre de sécurité multicouche conçu pour éliminer le risque d'exécution et protéger notre capital. De la gestion sécurisée des clés privées jusqu'à la simulation isolée des smart contracts, chaque maillon de notre infrastructure est audité et blindé pour résister aux attaques et aux fluctuations inattendues du marché.
+</p>
+
+<ul class="tech-list">
+<li>
+<div>
+<strong>Sandboxing EVM Isolé :</strong>
+Avant qu'une transaction ne soit envoyée au mempool public ou à un séquenceur L2, elle est entièrement simulée dans un bac à sable (sandbox) EVM local et stérile. Ce processus nous garantit la validité de l'exécution, évalue l'impact exact des frais et élimine tout risque d'attaque par réentrée ou de transactions empoisonnées.
+</div>
+</li>
+<li>
+<div>
+<strong>Fail-Safe &amp; Contrôle d'État :</strong>
+Notre système intègre des disjoncteurs automatiques (Fail-Safe). Si les conditions de marché changent brutalement pendant la milliseconde de validation ou si l'état des pools dévie de notre simulation initiale, notre smart contract d'arbitrage bloque l'exécution immédiatement pour éviter de consommer inutilement des frais de gas ou de subir des pertes.
+</div>
+</li>
+<li>
+<div>
+<strong>Chiffrement &amp; Gestion des Clés (KMS/HSM) :</strong>
+Les clés privées d'exécution ne sont jamais stockées en clair sur nos disques SSD ou dans nos fichiers de configuration. Elles sont sécurisées dans des modules matériels de sécurité (HSM) et gérées via Google Cloud Key Management Service (KMS), garantissant un accès chiffré en temps de calcul uniquement à la milliseconde d'exécution.
+</div>
+</li>
+</ul>
+</div>
+
+<!-- Partie 3 / 3 - securite.html -->
+<div class="diagram-container">
+<svg style="width: 100%; max-width: 380px;" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Cryptographic Shield (Bouclier de fond clignotant) -->
+<path d="M100 30 C120 30 160 35 160 80 C160 130 110 165 100 170 C90 165 40 130 40 80 C40 35 80 30 100 30 Z" fill="#020617" stroke="#f43f5e" stroke-width="3" style="animation: shield-glow 2s ease-in-out infinite;"/>
+
+<!-- Protected Server Node (Le serveur central) -->
+<rect x="75" y="70" width="50" height="15" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+<rect x="75" y="92" width="50" height="15" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+<rect x="75" y="114" width="50" height="15" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+
+<!-- Server LED indicators (Petites leds vertes) -->
+<circle cx="85" cy="77" r="2" fill="#10b981"/>
+<circle cx="85" cy="99" r="2" fill="#10b981"/>
+<circle cx="85" cy="121" r="2" fill="#10b981"/>
+
+<!-- Scanning Laser Line (Ligne laser de scan de sécurité animée) -->
+<line x1="50" y1="100" x2="150" y2="100" stroke="#f43f5e" stroke-width="2" class="animate-scan" style="filter: drop-shadow(0px 0px 4px #f43f5e);"/>
+
+<!-- Encryption Padlock (Le petit cadenas au centre) -->
+<rect x="92" y="90" width="16" height="12" rx="2" fill="#f43f5e"/>
+<path d="M96 90 V84 C96 79 104 79 104 84 V90" stroke="#f43f5e" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</div>
+</main>
+<footer>
+<p>&copy; 2026 Genosis Sync. Tous droits réservés.</p>
+<p style="display: flex; align-items: center; gap: 8px;">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+<span>Nœuds d'exécution synchronisés</span>
+</p>
+</footer>
+</body>
+</html>
